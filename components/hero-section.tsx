@@ -21,7 +21,18 @@ export function HeroSection() {
         </div>
 
         <div className="hero-media-card">
-          <img className="hero-media-img" src="/media/session.jpg" alt="" />
+          <video
+            className="hero-media-img"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="/media/session.jpg"
+            aria-hidden="true"
+          >
+            <source src="/media/neuralwerk-workshop-motion.mp4" type="video/mp4" />
+          </video>
           <div className="hero-media-wash" />
           <div className="hero-motion-lines" aria-hidden="true">
             <span />

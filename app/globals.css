@@ -271,6 +271,7 @@ main {
 .hero-media-img {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -808,9 +809,11 @@ main {
   grid-row: span 2;
 }
 
-.media-card img {
+.media-card img,
+.media-card video {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -818,7 +821,8 @@ main {
   transition: transform 700ms ease;
 }
 
-.media-card:hover img {
+.media-card:hover img,
+.media-card:hover video {
   transform: scale(1.06);
 }
 

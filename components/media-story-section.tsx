@@ -4,8 +4,9 @@ import { ArrowRight, Play, Sparkles } from 'lucide-react'
 const mediaCards = [
   {
     title: 'AI-Workshop im Unternehmen',
-    label: 'Video Slot',
+    label: 'Video Clip',
     image: '/media/session.jpg',
+    video: '/media/neuralwerk-workshop-motion.mp4',
     body: 'Prozessaufnahme, Tool-Landkarte und erste Use Cases in einem gefuhrten Workshop.'
   },
   {
@@ -29,7 +30,7 @@ export function MediaStorySection() {
         <p className="eyebrow">Design statt AI-Deko</p>
         <h2>Echte Arbeitsmomente. Klare Motion. Keine generischen AI-Bilder.</h2>
         <p>
-          Die Website arbeitet mit realen Bildflachen, ruhigen Video-Slots und animierten Produktdetails. So wirkt
+          Die Website arbeitet mit realen Bildflachen, lokalen Video-Clips und animierten Produktdetails. So wirkt
           Neuralwerk wie ein echtes Tech-Unternehmen, nicht wie eine austauschbare AI-Agentur.
         </p>
       </div>
@@ -37,7 +38,13 @@ export function MediaStorySection() {
       <div className="media-reel">
         {mediaCards.map((card, index) => (
           <article className={`media-card media-card-${index + 1}`} key={card.title}>
-            <img src={card.image} alt="" />
+            {card.video ? (
+              <video autoPlay muted loop playsInline preload="auto" poster={card.image} aria-hidden="true">
+                <source src={card.video} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={card.image} alt="" />
+            )}
             <div className="media-card-overlay" />
             <div className="media-card-content">
               <span>{card.label}</span>
