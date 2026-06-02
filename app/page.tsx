@@ -1,8 +1,7 @@
 import { AiChatAssessment } from '@/components/ai-chat-assessment'
 import { FaqSection } from '@/components/faq-section'
 import { FinalCta } from '@/components/final-cta'
-import { HeroSection } from '@/components/hero-section'
-import { MediaStorySection } from '@/components/media-story-section'
+import { MistralExperience } from '@/components/mistral-experience'
 import { PositioningSection } from '@/components/positioning-section'
 import { PricingSection } from '@/components/pricing-section'
 import { ProcessSection } from '@/components/process-section'
@@ -17,8 +16,7 @@ export default function HomePage() {
     <>
       <SiteHeader />
       <main>
-        <HeroSection />
-        <MediaStorySection />
+        <MistralExperience />
         <PositioningSection />
         <AiChatAssessment />
         <ServicesSection />
