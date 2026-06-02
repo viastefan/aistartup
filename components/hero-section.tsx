@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Check, MessageSquareText, ShieldCheck, Sparkles, Workflow } from 'lucide-react'
+import { ArrowRight, Check, MessageSquareText, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const trustPoints = [
@@ -12,28 +12,57 @@ const trustPoints = [
 export function HeroSection() {
   return (
     <section className="hero-section" id="top">
-      <div className="hero-shell">
-        <div className="hero-copy">
-          <p className="eyebrow">AI-Implementierung fur den deutschen Mittelstand.</p>
-          <h1>AI, die im Unternehmen wirklich ankommt.</h1>
-          <p className="hero-lede">
-            Wir helfen mittelstandischen Unternehmen in Bayern und Deutschland, kunstliche Intelligenz sinnvoll
-            einzufuhren - von der ersten Prozessanalyse bis zur fertigen Automatisierung.
-          </p>
-          <p className="hero-line">Kein Hype. Keine Tool-Flut. Sondern klare Umsetzung.</p>
+      <div className="hero-carousel-shell">
+        <div className="hero-peek hero-peek-left" aria-hidden="true">
+          <img src="/media/workshop.jpg" alt="" />
+        </div>
+        <div className="hero-peek hero-peek-right" aria-hidden="true">
+          <img src="/media/office.jpg" alt="" />
+        </div>
 
-          <div className="hero-actions">
-            <Button asChild>
-              <Link href="#ai-check">
-                AI-Check starten
-                <ArrowRight size={16} />
-              </Link>
-            </Button>
-            <Button asChild variant="secondary">
-              <Link href="#leistungen">Leistungen ansehen</Link>
-            </Button>
+        <div className="hero-media-card">
+          <img className="hero-media-img" src="/media/session.jpg" alt="" />
+          <div className="hero-media-wash" />
+          <div className="hero-motion-lines" aria-hidden="true">
+            <span />
+            <span />
+            <span />
           </div>
 
+          <div className="hero-copy">
+            <p className="eyebrow">Neuralwerk</p>
+            <h1>AI, die im Unternehmen wirklich ankommt.</h1>
+            <p className="hero-lede">
+              Wir analysieren Prozesse, bauen Automatisierungen und implementieren AI-Systeme fur den deutschen
+              Mittelstand.
+            </p>
+
+            <div className="hero-actions">
+              <Button asChild>
+                <Link href="#ai-check">
+                  AI-Check starten
+                  <ArrowRight size={16} />
+                </Link>
+              </Button>
+              <Button asChild variant="secondary">
+                <Link href="/leistungen">Leistungen ansehen</Link>
+              </Button>
+              <Button asChild variant="ghost">
+                <Link href="/prozess">Prozess</Link>
+              </Button>
+            </div>
+
+            <Link className="hero-chat-pill" href="#ai-check">
+              <span>
+                <MessageSquareText size={15} />
+              </span>
+              Beschreiben Sie Ihr Unternehmen. Wir zeigen die ersten AI-Potenziale.
+            </Link>
+          </div>
+        </div>
+
+        <div className="hero-bottom-row">
+          <span>Explore Neuralwerk</span>
           <div className="trust-grid" aria-label="Vertrauenspunkte">
             {trustPoints.map((point) => (
               <span key={point}>
@@ -42,62 +71,38 @@ export function HeroSection() {
               </span>
             ))}
           </div>
+          <div className="hero-mini-controls" aria-hidden="true">
+            <button type="button">‹</button>
+            <button type="button">›</button>
+          </div>
         </div>
+      </div>
 
-        <div className="hero-product-stage" aria-label="AI-Assessment Vorschau">
-          <div className="stage-nav">
-            <span>Neuralwerk Assessment</span>
-            <span className="stage-state">Live Preview</span>
-          </div>
-
-          <div className="hero-chat-preview">
-            <div className="preview-message assistant">
-              <span className="preview-icon">
-                <Sparkles size={15} />
-              </span>
-              <p>
-                Beschreiben Sie kurz Ihr Unternehmen. Ich prufe, wo AI und Automatisierung sinnvoll eingesetzt
-                werden konnen.
-              </p>
-            </div>
-            <div className="preview-message user">
-              <p>
-                Wir sind ein Immobilienunternehmen mit 18 Mitarbeitern und verlieren viel Zeit bei Exposes,
-                Anfragen und Terminabstimmung.
-              </p>
-            </div>
-            <div className="preview-message assistant">
-              <span className="preview-icon">
-                <MessageSquareText size={15} />
-              </span>
-              <p>
-                Ich sehe drei Ansatzpunkte: Anfragequalifizierung, Expose-Erstellung und Termin-Workflows.
-                Starten wir mit einer kurzen Einschatzung?
-              </p>
-            </div>
-          </div>
-
-          <div className="preview-input">
-            <span>Mein Unternehmen ist...</span>
-            <Link href="#ai-check">
-              Analyse starten
-              <ArrowRight size={15} />
-            </Link>
-          </div>
-
-          <div className="stage-metrics">
-            <span>
-              <Workflow size={15} />
-              Prozesse
-            </span>
-            <span>
-              <ShieldCheck size={15} />
-              Datenschutz
-            </span>
-            <span>
+      <div className="hero-product-stage" aria-label="AI-Assessment Vorschau">
+        <div className="hero-chat-preview">
+          <div className="preview-message assistant">
+            <span className="preview-icon">
               <Sparkles size={15} />
-              Potenziale
             </span>
+            <p>
+              Beschreiben Sie kurz Ihr Unternehmen. Ich prufe, wo AI und Automatisierung sinnvoll eingesetzt werden
+              konnen.
+            </p>
+          </div>
+          <div className="preview-message user">
+            <p>
+              Wir sind ein Immobilienunternehmen mit 18 Mitarbeitern und verlieren viel Zeit bei Exposes, Anfragen
+              und Terminabstimmung.
+            </p>
+          </div>
+          <div className="preview-message assistant">
+            <span className="preview-icon">
+              <MessageSquareText size={15} />
+            </span>
+            <p>
+              Ich sehe drei Ansatzpunkte: Anfragequalifizierung, Expose-Erstellung und Termin-Workflows. Starten wir
+              mit einer kurzen Einschatzung?
+            </p>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div>
-        <Link href="#top" className="site-logo">
+        <Link href="/" className="site-logo">
           <span className="logo-symbol">
             <Sparkle size={14} />
           </span>
@@ -21,14 +21,16 @@ export function SiteFooter() {
             key={link}
             href={
               link === 'AI-Check'
-                ? '#ai-check'
+                ? '/#ai-check'
                 : link === 'Prozess'
-                  ? '#prozess'
+                  ? '/prozess'
                   : link === 'Preise'
-                    ? '#preise'
+                    ? '/preise'
                     : link === 'Leistungen'
-                      ? '#leistungen'
-                      : '#top'
+                      ? '/leistungen'
+                      : link === 'Kontakt'
+                        ? '/#ai-check'
+                        : '/'
             }
           >
             {link}
