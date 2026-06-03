@@ -2,14 +2,14 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Neuralwerk - AI-Implementierung fur Mittelstand in Bayern & Deutschland',
+  title: 'Leqra - Make Your Company AI-Ready',
   description:
-    'Neuralwerk analysiert Prozesse, erkennt Automatisierungspotenziale und implementiert AI-Assistenten, Chatbots und Workflows fur mittelstandische Unternehmen.',
-  applicationName: 'Neuralwerk',
+    'Leqra structures company knowledge, workflows and operations so businesses can use AI systems, automations and intelligent workspaces like Festag and Tagro.',
+  applicationName: 'Leqra',
   openGraph: {
-    title: 'Neuralwerk - AI-Implementierung fur Mittelstand in Bayern & Deutschland',
+    title: 'Leqra - Make Your Company AI-Ready',
     description:
-      'Neuralwerk analysiert Prozesse, erkennt Automatisierungspotenziale und implementiert AI-Assistenten, Chatbots und Workflows fur mittelstandische Unternehmen.',
+      'Leqra structures company knowledge, workflows and operations so businesses can use AI systems, automations and intelligent workspaces like Festag and Tagro.',
     locale: 'de_DE',
     type: 'website'
   },

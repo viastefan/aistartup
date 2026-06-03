@@ -1,7 +1,15 @@
 import Link from 'next/link'
-import { Sparkle } from 'lucide-react'
+import { LeqraMark } from '@/components/leqra-mark'
 
-const links = ['Leistungen', 'AI-Check', 'Prozess', 'Preise', 'Kontakt', 'Impressum', 'Datenschutz']
+const links = [
+  { label: 'System', href: '/#system' },
+  { label: 'Use Cases', href: '/#use-cases' },
+  { label: 'Process', href: '/#process' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Contact', href: '/#contact' },
+  { label: 'Festag', href: '/#relationship' },
+  { label: 'Tagro', href: '/#relationship' }
+]
 
 export function SiteFooter() {
   return (
@@ -9,35 +17,20 @@ export function SiteFooter() {
       <div>
         <Link href="/" className="site-logo">
           <span className="logo-symbol">
-            <Sparkle size={14} />
+            <LeqraMark />
           </span>
-          <span>Neuralwerk</span>
+          <span>Leqra</span>
         </Link>
-        <p>AI-Implementierung fur den deutschen Mittelstand.</p>
+        <p>Leqra makes companies AI-ready. Festag makes work manageable. Tagro makes progress understandable.</p>
       </div>
       <nav aria-label="Footer Navigation">
         {links.map((link) => (
-          <Link
-            key={link}
-            href={
-              link === 'AI-Check'
-                ? '/#ai-check'
-                : link === 'Prozess'
-                  ? '/prozess'
-                  : link === 'Preise'
-                    ? '/preise'
-                    : link === 'Leistungen'
-                      ? '/leistungen'
-                      : link === 'Kontakt'
-                        ? '/#ai-check'
-                        : '/'
-            }
-          >
-            {link}
+          <Link key={link.label} href={link.href}>
+            {link.label}
           </Link>
         ))}
       </nav>
-      <a href="mailto:hello@neuralwerk.ai">hello@neuralwerk.ai</a>
+      <a href="mailto:hello@leqra.ai">hello@leqra.ai</a>
     </footer>
   )
 }
