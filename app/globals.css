@@ -17,26 +17,31 @@
   --max-width: 1180px;
 }
 
-body:has(.leqra-page) {
+body:has(.leqra-page),
+body:has(.leqra-subpage) {
   color: #f5f7fb;
   background: #050607;
 }
 
-body:has(.leqra-page)::before {
+body:has(.leqra-page)::before,
+body:has(.leqra-subpage)::before {
   opacity: 0;
 }
 
-body:has(.leqra-page) .site-header {
+body:has(.leqra-page) .site-header,
+body:has(.leqra-subpage) .site-header {
   border-color: rgba(255, 255, 255, 0.1);
   background: rgba(7, 8, 10, 0.82);
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
 }
 
-body:has(.leqra-page) .site-logo {
+body:has(.leqra-page) .site-logo,
+body:has(.leqra-subpage) .site-logo {
   color: #f7f8fb;
 }
 
-body:has(.leqra-page) .logo-symbol {
+body:has(.leqra-page) .logo-symbol,
+body:has(.leqra-subpage) .logo-symbol {
   width: 32px;
   height: 32px;
   color: #050607;
@@ -44,12 +49,14 @@ body:has(.leqra-page) .logo-symbol {
   border-radius: 7px;
 }
 
-body:has(.leqra-page) .logo-symbol svg {
+body:has(.leqra-page) .logo-symbol svg,
+body:has(.leqra-subpage) .logo-symbol svg {
   width: 25px;
   height: auto;
 }
 
 .leqra-page {
+  --max-width: 1320px;
   --leqra-bg: #050607;
   --leqra-panel: #0b0d10;
   --leqra-panel-2: #101319;
@@ -420,10 +427,12 @@ body:has(.leqra-page) .logo-symbol svg {
 
 .leqra-problem-section,
 .leqra-system-section,
+.leqra-detail-section,
 .leqra-relationship-section,
 .leqra-usecase-section,
 .leqra-feature-section,
 .leqra-before-after-section,
+.leqra-audit-section,
 .leqra-process-section,
 .leqra-pricing-section,
 .leqra-trust-section,
@@ -433,8 +442,10 @@ body:has(.leqra-page) .logo-symbol svg {
 }
 
 .leqra-problem-grid,
+.leqra-detail-grid,
 .leqra-feature-grid,
 .leqra-compare-grid,
+.leqra-audit-grid,
 .leqra-pricing-grid,
 .leqra-trust-grid {
   width: min(var(--max-width), calc(100% - 48px));
@@ -448,10 +459,12 @@ body:has(.leqra-page) .logo-symbol svg {
 }
 
 .leqra-problem-grid article,
+.leqra-detail-grid article,
 .leqra-feature-grid article,
 .leqra-flow article,
 .leqra-usecase-track article,
 .leqra-compare-grid article,
+.leqra-audit-grid article,
 .leqra-process-line article,
 .leqra-pricing-grid article,
 .leqra-trust-grid article {
@@ -474,10 +487,12 @@ body:has(.leqra-page) .logo-symbol svg {
 }
 
 .leqra-problem-grid h3,
+.leqra-detail-grid h3,
 .leqra-feature-grid h3,
 .leqra-flow h3,
 .leqra-usecase-track h3,
 .leqra-compare-grid h3,
+.leqra-audit-grid h3,
 .leqra-process-line h3,
 .leqra-pricing-grid h3,
 .leqra-trust-grid h3 {
@@ -489,9 +504,11 @@ body:has(.leqra-page) .logo-symbol svg {
 }
 
 .leqra-problem-grid p,
+.leqra-detail-grid p,
 .leqra-feature-grid p,
 .leqra-flow p,
 .leqra-usecase-track p,
+.leqra-audit-grid p,
 .leqra-process-line p,
 .leqra-pricing-grid p,
 .leqra-trust-grid p {
@@ -506,6 +523,32 @@ body:has(.leqra-page) .logo-symbol svg {
   overflow: hidden;
   background:
     linear-gradient(180deg, #050607 0%, #0b0d11 40%, #050607 100%);
+}
+
+.leqra-detail-section {
+  background:
+    linear-gradient(180deg, #050607 0%, #0c1014 54%, #050607 100%);
+}
+
+.leqra-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.leqra-detail-grid article {
+  min-height: 300px;
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.leqra-detail-grid h3 {
+  font-size: clamp(30px, 3.6vw, 58px);
+}
+
+.leqra-detail-grid article:nth-child(2n) {
+  background:
+    linear-gradient(145deg, rgba(158, 231, 255, 0.12), transparent 36%),
+    rgba(255, 255, 255, 0.045);
 }
 
 .leqra-layer-stack {
@@ -742,6 +785,48 @@ body:has(.leqra-page) .logo-symbol svg {
     linear-gradient(180deg, #050607, #0a0d11 55%, #050607);
 }
 
+.leqra-audit-section {
+  background:
+    linear-gradient(180deg, #eef2f7 0%, #f7f9fb 100%);
+  color: #050607;
+}
+
+.leqra-audit-section .leqra-section-copy h2 {
+  color: #050607;
+}
+
+.leqra-audit-section .leqra-section-copy p:not(.leqra-kicker) {
+  color: rgba(5, 6, 7, 0.64);
+}
+
+.leqra-audit-section .leqra-kicker {
+  color: #263244;
+}
+
+.leqra-audit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.leqra-audit-grid article {
+  min-height: 300px;
+  padding: 26px;
+  color: #050607;
+  background: #ffffff;
+  border-color: rgba(5, 6, 7, 0.1);
+  box-shadow: 0 28px 76px rgba(5, 6, 7, 0.1);
+}
+
+.leqra-audit-grid h3 {
+  color: #050607;
+  font-size: clamp(26px, 3vw, 44px);
+}
+
+.leqra-audit-grid p {
+  color: rgba(5, 6, 7, 0.62);
+}
+
 .leqra-compare-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -957,8 +1042,9 @@ body:has(.leqra-page) .logo-symbol svg {
   justify-content: center;
 }
 
-body:has(.leqra-page) .site-footer {
-  width: min(var(--max-width), calc(100% - 32px));
+body:has(.leqra-page) .site-footer,
+body:has(.leqra-subpage) .site-footer {
+  width: min(1320px, calc(100% - 32px));
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 26px;
@@ -971,14 +1057,16 @@ body:has(.leqra-page) .site-footer {
   background: rgba(255, 255, 255, 0.04);
 }
 
-body:has(.leqra-page) .site-footer p {
+body:has(.leqra-page) .site-footer p,
+body:has(.leqra-subpage) .site-footer p {
   max-width: 620px;
   margin: 16px 0 0;
   color: rgba(255, 255, 255, 0.56);
   line-height: 1.5;
 }
 
-body:has(.leqra-page) .site-footer nav {
+body:has(.leqra-page) .site-footer nav,
+body:has(.leqra-subpage) .site-footer nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -987,20 +1075,223 @@ body:has(.leqra-page) .site-footer nav {
 }
 
 body:has(.leqra-page) .site-footer nav a,
-body:has(.leqra-page) .site-footer > a {
+body:has(.leqra-page) .site-footer > a,
+body:has(.leqra-subpage) .site-footer nav a,
+body:has(.leqra-subpage) .site-footer > a {
   color: rgba(255, 255, 255, 0.66);
   transition: color 160ms ease;
 }
 
 body:has(.leqra-page) .site-footer nav a:hover,
-body:has(.leqra-page) .site-footer > a:hover {
+body:has(.leqra-page) .site-footer > a:hover,
+body:has(.leqra-subpage) .site-footer nav a:hover,
+body:has(.leqra-subpage) .site-footer > a:hover {
   color: #ffffff;
 }
 
-body:has(.leqra-page) .site-footer > a {
+body:has(.leqra-page) .site-footer > a,
+body:has(.leqra-subpage) .site-footer > a {
   grid-column: 2;
   justify-self: end;
   font-size: 14px;
+}
+
+.leqra-subpage {
+  --max-width: 1320px;
+  position: relative;
+  overflow: hidden;
+  color: #f6f7f9;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(180deg, #050607 0%, #090b0f 48%, #050607 100%);
+  background-size: 88px 88px, 88px 88px, 100% 100%;
+}
+
+.leqra-subpage-hero {
+  position: relative;
+  width: min(var(--max-width), calc(100% - 48px));
+  min-height: 760px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.36fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: end;
+  margin: 0 auto;
+  padding: clamp(96px, 12vw, 178px) 0 clamp(54px, 7vw, 90px);
+}
+
+.leqra-subpage-signal {
+  position: absolute;
+  right: -10%;
+  top: 12%;
+  width: min(44vw, 560px);
+  color: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.leqra-subpage-signal svg {
+  width: 100%;
+  height: auto;
+}
+
+.leqra-subpage-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.leqra-subpage-copy h1 {
+  max-width: 980px;
+  margin: 18px 0 0;
+  color: #ffffff;
+  font-size: clamp(58px, 8vw, 118px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.leqra-subpage-copy > p:not(.leqra-kicker) {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(19px, 2vw, 28px);
+  line-height: 1.36;
+}
+
+.leqra-subpage-panel {
+  position: relative;
+  z-index: 2;
+  min-height: 330px;
+  display: grid;
+  align-content: space-between;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(158, 231, 255, 0.12), transparent 34%),
+    rgba(255, 255, 255, 0.05);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+}
+
+.leqra-subpage-panel span {
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.leqra-subpage-panel strong {
+  color: #ffffff;
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: 0.96;
+}
+
+.leqra-subpage-panel p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.52;
+}
+
+.leqra-subpage-grid,
+.leqra-subpage-detail,
+.leqra-subpage-cta {
+  width: min(var(--max-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.leqra-subpage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 0 clamp(90px, 12vw, 160px);
+}
+
+.leqra-subpage-card,
+.leqra-subpage-detail article {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.028)),
+    rgba(9, 11, 14, 0.84);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.leqra-subpage-card {
+  min-height: 430px;
+  padding: clamp(26px, 4vw, 44px);
+}
+
+.leqra-subpage-card h2,
+.leqra-subpage-detail h2,
+.leqra-subpage-cta h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(32px, 4vw, 64px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.leqra-subpage-card p,
+.leqra-subpage-detail p {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 17px;
+  line-height: 1.58;
+}
+
+.leqra-subpage-card ul {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 28px 0 0;
+  list-style: none;
+}
+
+.leqra-subpage-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.leqra-subpage-card li svg {
+  color: #35c878;
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.leqra-subpage-detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 0 clamp(86px, 11vw, 150px);
+}
+
+.leqra-subpage-detail article {
+  min-height: 260px;
+  padding: clamp(26px, 4vw, 44px);
+}
+
+.leqra-subpage-cta {
+  min-height: 620px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 0 0 clamp(86px, 11vw, 150px);
+  text-align: center;
+}
+
+.leqra-subpage-cta > svg {
+  width: min(280px, 52vw);
+  height: auto;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.leqra-subpage-cta h2 {
+  max-width: 900px;
+  margin: 16px auto 34px;
 }
 
 @media (max-width: 1120px) {
@@ -1030,9 +1321,11 @@ body:has(.leqra-page) .site-footer > a {
   }
 
   .leqra-problem-grid,
+  .leqra-detail-grid,
   .leqra-feature-grid,
   .leqra-flow,
   .leqra-product-console,
+  .leqra-audit-grid,
   .leqra-process-line,
   .leqra-pricing-grid,
   .leqra-trust-grid {
@@ -1077,6 +1370,21 @@ body:has(.leqra-page) .site-footer > a {
   .leqra-usecase-track article {
     width: 100%;
   }
+
+  .leqra-subpage-hero,
+  .leqra-subpage-grid,
+  .leqra-subpage-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .leqra-subpage-hero {
+    min-height: auto;
+    align-items: start;
+  }
+
+  .leqra-subpage-panel {
+    max-width: 560px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1117,10 +1425,25 @@ body:has(.leqra-page) .site-footer > a {
     display: none;
   }
 
+  body:has(.leqra-subpage) .site-header {
+    width: calc(100% - 20px);
+    min-height: 62px;
+    justify-content: flex-start;
+    margin-top: 10px;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  body:has(.leqra-subpage) .site-header .nw-button {
+    display: none;
+  }
+
   .leqra-section-copy,
   .leqra-problem-grid,
+  .leqra-detail-grid,
   .leqra-feature-grid,
   .leqra-compare-grid,
+  .leqra-audit-grid,
   .leqra-pricing-grid,
   .leqra-trust-grid,
   .leqra-layer-stack,
@@ -1187,9 +1510,11 @@ body:has(.leqra-page) .site-footer > a {
 
   .leqra-lane-board,
   .leqra-problem-grid,
+  .leqra-detail-grid,
   .leqra-feature-grid,
   .leqra-flow,
   .leqra-product-console,
+  .leqra-audit-grid,
   .leqra-process-line,
   .leqra-pricing-grid,
   .leqra-trust-grid,
@@ -1210,10 +1535,12 @@ body:has(.leqra-page) .site-footer > a {
 
   .leqra-problem-section,
   .leqra-system-section,
+  .leqra-detail-section,
   .leqra-relationship-section,
   .leqra-usecase-section,
   .leqra-feature-section,
   .leqra-before-after-section,
+  .leqra-audit-section,
   .leqra-process-section,
   .leqra-pricing-section,
   .leqra-trust-section,
@@ -1262,13 +1589,64 @@ body:has(.leqra-page) .site-footer > a {
     padding: 22px;
   }
 
-  body:has(.leqra-page) .site-footer nav {
+  body:has(.leqra-subpage) .site-footer {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  body:has(.leqra-page) .site-footer nav,
+  body:has(.leqra-subpage) .site-footer nav {
     justify-content: flex-start;
   }
 
-  body:has(.leqra-page) .site-footer > a {
+  body:has(.leqra-page) .site-footer > a,
+  body:has(.leqra-subpage) .site-footer > a {
     grid-column: auto;
     justify-self: start;
+  }
+
+  .leqra-subpage-hero,
+  .leqra-subpage-grid,
+  .leqra-subpage-detail,
+  .leqra-subpage-cta {
+    width: calc(100% - 28px);
+  }
+
+  .leqra-subpage-hero {
+    min-height: auto;
+    padding: 64px 0 58px;
+  }
+
+  .leqra-subpage-signal {
+    right: -28%;
+    top: 8%;
+    width: 90vw;
+  }
+
+  .leqra-subpage-copy h1 {
+    font-size: clamp(42px, 12.6vw, 58px);
+    line-height: 0.98;
+  }
+
+  .leqra-subpage-copy > p:not(.leqra-kicker) {
+    font-size: 17px;
+  }
+
+  .leqra-subpage-panel,
+  .leqra-subpage-card,
+  .leqra-subpage-detail article {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .leqra-subpage-grid,
+  .leqra-subpage-detail {
+    padding-bottom: 68px;
+  }
+
+  .leqra-subpage-cta {
+    min-height: 520px;
+    padding-bottom: 68px;
   }
 }
 

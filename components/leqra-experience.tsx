@@ -7,183 +7,217 @@ import { ArrowRight, Check, FileText, Lock, ShieldCheck } from 'lucide-react'
 import { LeqraMark } from '@/components/leqra-mark'
 
 const fragments = [
-  'Client asks for update',
-  'Decision pending',
-  'Approval missing',
-  'Scope changed',
-  'Task unassigned',
-  'Risk detected',
+  'Kundenfrage offen',
+  'Freigabe fehlt',
+  'Entscheidung wartet',
+  'Scope geändert',
+  'Aufgabe ohne Owner',
+  'Risiko erkannt',
   'Final_final.pdf',
-  'CRM note',
-  'Meeting note',
-  'Report needed',
-  'Customer waiting',
-  'Process unclear'
+  'CRM-Notiz',
+  'Meeting-Protokoll',
+  'Report benötigt',
+  'Kunde wartet',
+  'Prozess unklar'
 ]
 
-const lanes = ['Knowledge', 'Process', 'Task', 'Decision', 'Approval', 'Risk', 'Workflow', 'Client', 'Report']
+const lanes = ['Wissen', 'Prozess', 'Aufgabe', 'Entscheidung', 'Freigabe', 'Risiko', 'Workflow', 'Kunde', 'Report']
 
 const problemCards = [
   {
-    title: 'Scattered Knowledge',
-    body: 'Important information lives across documents, emails, tools, meetings and internal conversations.'
+    title: 'Verstreutes Wissen',
+    body: 'Wichtige Informationen liegen in Dokumenten, E-Mails, Meetings, Projekttools, Tabellen und Köpfen.'
   },
   {
-    title: 'Lost Work',
-    body: 'Tasks, decisions, approvals, risks and promises disappear before they become manageable.'
+    title: 'Unsichtbare Arbeit',
+    body: 'Aufgaben, Entscheidungen, Risiken und Zusagen verschwinden, bevor daraus verlässliche Arbeit wird.'
   },
   {
-    title: 'Unready AI',
-    body: 'Generic AI can answer questions, but it cannot operate reliably without structured business context.'
+    title: 'KI ohne Kontext',
+    body: 'KI-Tools können antworten. Sie können aber nicht zuverlässig handeln, wenn der Unternehmenskontext fehlt.'
   }
 ]
 
 const layers = [
   {
-    title: 'Data & Knowledge Mapping',
-    body: 'Leqra identifies where company knowledge lives and how it connects to real operations.'
+    title: 'Daten- und Wissenslandkarte',
+    body: 'Leqra erkennt, wo Unternehmenswissen entsteht, wem es gehört und wie es mit echter Arbeit verbunden ist.'
   },
   {
-    title: 'Operational Structuring',
-    body: 'Scattered information becomes roles, processes, tasks, decisions, approvals and workflows.'
+    title: 'Operative Strukturierung',
+    body: 'Aus verstreuten Signalen werden Rollen, Prozesse, Aufgaben, Entscheidungen, Freigaben und Verantwortlichkeiten.'
   },
   {
-    title: 'AI Readiness Layer',
-    body: 'The company is prepared for LLMs, automations, internal assistants and intelligent systems.'
+    title: 'KI-Bereitschafts-Layer',
+    body: 'Das Unternehmen wird so vorbereitet, dass KI-Assistenten, Automationen und interne Systeme verlässlich arbeiten können.'
   },
   {
-    title: 'Workspace Activation',
-    body: 'Structured intelligence can power systems like Festag and briefing logic like Tagro.'
+    title: 'Aktivierung in Festag und Tagro',
+    body: 'Die strukturierte Intelligenz kann in operative Workspaces, Briefings, Reports und Managementlogik überführt werden.'
   }
 ]
 
 const relationship = [
   {
     name: 'Leqra',
-    line: 'Makes the company AI-ready.',
-    body: 'Structures knowledge, processes, workflows, data and operational logic.'
+    line: 'Macht Unternehmen KI-bereit.',
+    body: 'Strukturiert Wissen, Prozesse, Daten, Verantwortlichkeiten, Entscheidungen und operative Logik.'
   },
   {
     name: 'Festag',
-    line: 'Makes work manageable.',
-    body: 'Turns structured operations into projects, tasks, clients, approvals, decisions and dashboards.'
+    line: 'Macht Arbeit steuerbar.',
+    body: 'Verwandelt strukturierte Operations in Projekte, Aufgaben, Kunden, Freigaben, Entscheidungen und Dashboards.'
   },
   {
     name: 'Tagro',
-    line: 'Makes progress understandable.',
-    body: 'Translates work into calm briefings, reports, audio summaries and clear next steps.'
+    line: 'Macht Fortschritt verständlich.',
+    body: 'Übersetzt laufende Arbeit in Management-Briefings, Statusberichte, Risiken und nächste Schritte.'
   }
 ]
 
 const useCases = [
   {
-    title: 'Agencies & Service Companies',
-    problem: 'Client feedback, scope changes and approvals are scattered across calls, emails and tools.',
-    leqra: 'Briefings, phases, approvals, decisions and scope changes.',
-    festag: 'Projects, clients, tasks, approvals and status reports.',
-    tagro: 'Weekly client briefings, risks and next steps.'
+    title: 'Agenturen und Dienstleister',
+    problem: 'Kundenfeedback, Scope-Änderungen und Freigaben liegen in Calls, E-Mails und Tools.',
+    leqra: 'Briefings, Phasen, Freigaben, Entscheidungen und Scope-Änderungen.',
+    festag: 'Projekte, Kundenbereiche, Aufgaben, Freigaben und Statusberichte.',
+    tagro: 'Wochenbriefings, Risiken, offene Punkte und nächste Schritte.'
   },
   {
-    title: 'Real Estate Companies',
-    problem: 'Object data, leads, owner communication and documents are spread across systems and people.',
-    leqra: 'Properties, owners, leads, documents, valuation logic and owner updates.',
-    festag: 'Property projects, owner portals, lead workflows and document checklists.',
-    tagro: 'Owner reports, viewing updates and missing documents.'
+    title: 'Immobilienunternehmen',
+    problem: 'Objektdaten, Leads, Eigentümerkommunikation und Dokumente sind über Systeme und Personen verteilt.',
+    leqra: 'Objekte, Eigentümer, Leads, Unterlagen, Bewertungslogik und Updates.',
+    festag: 'Objektprojekte, Eigentümerportale, Lead-Flows und Dokumentenlisten.',
+    tagro: 'Eigentümerberichte, Besichtigungsstatus und fehlende Unterlagen.'
   },
   {
-    title: 'Hospitality & Hotel Groups',
-    problem: 'Guest knowledge, service requests and management updates live in PMS, emails, SOPs and staff knowledge.',
-    leqra: 'Guest questions, service processes, SOPs, escalation paths and knowledge updates.',
-    festag: 'Hotel operations projects, internal tasks and management reporting.',
-    tagro: 'Operations briefings, recurring guest issues and improvement suggestions.'
+    title: 'Hotels und Hospitality-Gruppen',
+    problem: 'Gästewissen, Serviceanfragen, SOPs und Managementupdates leben in PMS, E-Mails und Teamwissen.',
+    leqra: 'Gästefragen, Serviceprozesse, SOPs, Eskalationswege und Wissensupdates.',
+    festag: 'Hotel-Operations, interne Aufgaben und Managementübersicht.',
+    tagro: 'Operations-Briefings, wiederkehrende Probleme und Verbesserungsvorschläge.'
   },
   {
-    title: 'Consulting & B2B Teams',
-    problem: 'Meetings, decisions, deliverables and responsibilities often disappear in communication.',
-    leqra: 'Client goals, deliverables, decisions, risks, tasks and reporting cycles.',
-    festag: 'Client workspaces, approvals, timelines and project visibility.',
-    tagro: 'Executive summaries, decision logs and project health.'
+    title: 'Beratung und B2B-Teams',
+    problem: 'Meetings, Entscheidungen, Deliverables und Zuständigkeiten verschwinden in Kommunikation.',
+    leqra: 'Kundenziele, Deliverables, Entscheidungen, Risiken, Aufgaben und Reportingzyklen.',
+    festag: 'Kundenworkspaces, Freigaben, Zeitpläne und Projekttransparenz.',
+    tagro: 'Executive Summaries, Entscheidungslogs und Projektgesundheit.'
   },
   {
-    title: 'Internal Operations',
-    problem: 'Leadership lacks a clear picture of responsibilities, blockers, priorities and team progress.',
-    leqra: 'Processes, ownership, tasks, risks, approvals and internal knowledge.',
-    festag: 'Team dashboards, workspaces, internal projects and priorities.',
-    tagro: 'Management briefings, risk summaries and action points.'
+    title: 'Interne Operations',
+    problem: 'Führungsteams fehlt ein klares Bild von Verantwortlichkeiten, Blockern, Prioritäten und Fortschritt.',
+    leqra: 'Prozesse, Ownership, Aufgaben, Risiken, Freigaben und internes Wissen.',
+    festag: 'Team-Dashboards, interne Projekte, Prioritäten und Workflows.',
+    tagro: 'Management-Briefings, Risikoübersichten und konkrete Action Points.'
   }
 ]
 
 const features = [
-  ['AI Readiness Audit', 'Understand where your company stands before implementing AI.'],
-  ['Knowledge Core', 'Structure company knowledge into usable, verified operational context.'],
-  ['Process Mapping', 'Map recurring workflows, responsibilities, approvals and escalation paths.'],
-  ['WorkGraph Preparation', 'Connect people, projects, documents, decisions, risks, tasks and reports.'],
-  ['Automation Blueprint', 'Identify what can be automated safely and what needs human approval.'],
-  ['Festag Activation', 'Turn operations into manageable projects, clients, approvals and status systems.'],
-  ['Tagro Briefing Logic', 'Prepare the context Tagro needs to create clear reports and briefings.'],
-  ['Continuous AI Operations', 'Keep knowledge, workflows and AI systems updated as the company changes.']
+  ['KI-Bereitschafts-Audit', 'Verstehen, wo das Unternehmen steht und welche KI-Projekte wirklich tragfähig sind.'],
+  ['Knowledge Core', 'Unternehmenswissen in nutzbaren, geprüften und versionierten Kontext verwandeln.'],
+  ['Prozessmodellierung', 'Wiederkehrende Abläufe, Verantwortlichkeiten, Freigaben und Eskalationen strukturieren.'],
+  ['WorkGraph-Vorbereitung', 'Menschen, Projekte, Dokumente, Entscheidungen, Risiken, Aufgaben und Reports verbinden.'],
+  ['Automation Blueprint', 'Erkennen, was automatisiert werden kann und wo menschliche Freigabe nötig bleibt.'],
+  ['Festag-Aktivierung', 'Operations in steuerbare Projekte, Kundenbereiche, Freigaben und Statussysteme bringen.'],
+  ['Tagro-Briefinglogik', 'Den Kontext vorbereiten, aus dem klare Berichte, Audios und Managementbriefings entstehen.'],
+  ['Kontinuierliche KI-Operations', 'Wissen, Workflows und KI-Systeme laufend aktuell halten, wenn sich das Unternehmen verändert.']
+]
+
+const detailGroups = [
+  {
+    title: 'Wissen',
+    body: 'Dokumente, SOPs, Meetingnotizen, Webseiten, CRM-Notizen, interne Regeln und Erfahrungswissen.'
+  },
+  {
+    title: 'Arbeit',
+    body: 'Aufgaben, Verantwortliche, Fristen, Status, Blocker, Eskalationen und Übergaben.'
+  },
+  {
+    title: 'Entscheidungen',
+    body: 'Was entschieden wurde, wer entschieden hat, welche Grundlage gilt und was daraus folgt.'
+  },
+  {
+    title: 'Freigaben',
+    body: 'Angebote, Budgets, Scope, Dokumente, Kundenfeedback und kritische Prozessschritte.'
+  },
+  {
+    title: 'Risiken',
+    body: 'Verzögerungen, fehlende Informationen, unklare Ownership, veraltete Daten und offene Kundenpunkte.'
+  },
+  {
+    title: 'Berichte',
+    body: 'Status, Fortschritt, nächste Schritte, Managementsicht, Kundenupdates und Teambriefings.'
+  }
 ]
 
 const before = [
-  'Knowledge hidden in documents',
-  'Tasks lost in emails',
-  'Clients asking for status',
-  'Manual reporting',
-  'AI tools without context',
-  'Decisions not documented',
-  'Approvals missing',
-  'Status hidden in people heads'
+  'Wissen in Dokumenten versteckt',
+  'Aufgaben in E-Mails verloren',
+  'Kunden fragen nach Status',
+  'Manuelle Reportings',
+  'KI-Tools ohne Unternehmenskontext',
+  'Entscheidungen nicht dokumentiert',
+  'Freigaben fehlen',
+  'Status lebt in Köpfen'
 ]
 
 const after = [
-  'AI-ready company knowledge',
-  'Structured projects and workflows',
-  'Clear responsibilities',
-  'Managed approvals and decisions',
-  'Festag-ready operations',
-  'Tagro-powered clarity',
-  'Automated status briefings',
-  'Operational risk detection'
+  'KI-bereites Unternehmenswissen',
+  'Strukturierte Projekte und Workflows',
+  'Klare Verantwortlichkeiten',
+  'Gesteuerte Freigaben und Entscheidungen',
+  'Festag-bereite Operations',
+  'Tagro-basierte Klarheit',
+  'Automatisierbare Statusbriefings',
+  'Frühe Risikoerkennung'
 ]
 
 const process = [
-  ['Audit', 'We analyze data sources, communication patterns, workflows, tools and bottlenecks.'],
-  ['Structure', 'We turn scattered knowledge into roles, decisions, approvals, tasks and knowledge layers.'],
-  ['Activate', 'We connect company logic to AI systems, automations and workspaces like Festag.'],
-  ['Operate', 'We improve the system as teams, clients, processes and knowledge evolve.']
+  ['Audit', 'Wir analysieren Datenquellen, Kommunikation, Workflows, Tools, Engpässe und operative Muster.'],
+  ['Struktur', 'Wir verwandeln verstreutes Wissen in Rollen, Entscheidungen, Freigaben, Aufgaben und Wissenslayer.'],
+  ['Aktivierung', 'Wir verbinden Unternehmenslogik mit KI-Systemen, Automationen und Workspaces wie Festag.'],
+  ['Betrieb', 'Wir verbessern das System, während sich Teams, Kunden, Prozesse und Wissen weiterentwickeln.']
+]
+
+const auditDeliverables = [
+  ['Bereitschafts-Score', 'Ein realistisches Bild, welche Bereiche sofort KI-fähig sind und wo Struktur fehlt.'],
+  ['Use-Case Map', 'Priorisierte Anwendungsfälle nach Nutzen, Risiko, Aufwand und Datenverfügbarkeit.'],
+  ['Daten- und Tool-Landkarte', 'Welche Quellen relevant sind, welche fehlen und welche nur kontrolliert angebunden werden.'],
+  ['90-Tage-Fahrplan', 'Konkrete Schritte für Struktur, Pilot, Festag-Aktivierung, Automationen und laufenden Betrieb.']
 ]
 
 const pricing = [
   {
-    name: 'AI Readiness Audit',
-    price: 'from EUR 1,500',
-    body: 'For companies that want to understand where AI can create real operational value.',
-    items: ['data and workflow analysis', 'AI opportunity map', 'readiness score', 'recommended roadmap'],
-    cta: 'Start Audit'
+    name: 'KI-Bereitschafts-Audit',
+    price: 'ab 1.500 EUR',
+    body: 'Für Unternehmen, die verstehen wollen, wo KI echten operativen Wert erzeugt.',
+    items: ['Daten- und Workflowanalyse', 'KI-Potenzialkarte', 'Bereitschafts-Score', 'empfohlener Fahrplan'],
+    cta: 'Audit starten'
   },
   {
-    name: 'Leqra Operations Setup',
-    price: 'from EUR 7,500',
-    body: 'For companies that want to become AI-ready and prepare work for intelligent management.',
-    items: ['knowledge structuring', 'process mapping', 'Festag-ready project structures', 'automation blueprint'],
-    cta: 'Plan Setup'
+    name: 'Leqra Operations-Aufbau',
+    price: 'ab 7.500 EUR',
+    body: 'Für Unternehmen, die KI-bereit werden und Arbeit in steuerbare Systeme überführen wollen.',
+    items: ['Wissensstrukturierung', 'Prozessmodellierung', 'Festag-bereite Projektstrukturen', 'Automation Blueprint'],
+    cta: 'Setup planen'
   },
   {
-    name: 'Continuous AI Operations',
-    price: 'from EUR 1,500/month',
-    body: 'For companies that want to keep their AI-ready structure alive and improving.',
-    items: ['knowledge updates', 'workflow optimization', 'Tagro briefing optimization', 'ongoing advisory'],
-    cta: 'Request Retainer'
+    name: 'Kontinuierliche KI-Operations',
+    price: 'ab 1.500 EUR/Monat',
+    body: 'Für Unternehmen, die ihre KI-bereite Struktur dauerhaft verbessern und aktuell halten wollen.',
+    items: ['Wissensupdates', 'Workflow-Optimierung', 'Tagro-Briefingoptimierung', 'laufende Beratung'],
+    cta: 'Betreuung anfragen'
   }
 ]
 
 const trustItems = [
-  'minimal data access to start',
-  'clearly defined data scope',
-  'no use for third-party model training',
-  'project-based access control',
-  'NDA and data processing agreements possible',
-  'human approval for critical workflows'
+  'minimaler Datenzugriff zum Start',
+  'klar definierter Datenumfang',
+  'keine Nutzung für fremdes Modelltraining',
+  'projektbasierte Zugriffskontrolle',
+  'NDA und AV-Vertrag möglich',
+  'menschliche Freigabe für kritische Workflows'
 ]
 
 export function LeqraExperience() {
@@ -224,24 +258,24 @@ export function LeqraExperience() {
         </div>
 
         <div className="leqra-hero-copy">
-          <p className="leqra-kicker">AI Operations Infrastructure</p>
+          <p className="leqra-kicker">KI-Operations Infrastruktur</p>
           <h1>
-            <span>From scattered</span>{' '}
-            <span>work to structured</span>{' '}
-            <span>intelligence.</span>
+            <span>Aus verstreuter</span>{' '}
+            <span>Arbeit wird strukturierte</span>{' '}
+            <span>Intelligenz.</span>
           </h1>
           <p>
-            Leqra prepares your company for AI by structuring knowledge, workflows and operations into systems that
-            can be managed, automated and explained.
+            Leqra macht Unternehmen KI-bereit, indem Wissen, Prozesse, Entscheidungen und operative Daten in Systeme
+            überführt werden, die steuerbar, automatisierbar und erklärbar sind.
           </p>
-          <span>Leqra makes companies AI-ready. Festag makes work manageable. Tagro makes progress understandable.</span>
+          <span>Leqra strukturiert das Unternehmen. Festag steuert die Arbeit. Tagro erklärt den Fortschritt.</span>
           <div className="leqra-actions">
-            <Link className="nw-button nw-button-primary" href="#contact">
-              Start AI Readiness Audit
+            <Link className="nw-button nw-button-primary" href="/kontakt">
+              KI-Bereitschafts-Audit starten
               <ArrowRight size={16} />
             </Link>
-            <Link className="nw-button nw-button-secondary" href="#system">
-              Explore the System
+            <Link className="nw-button nw-button-secondary" href="/system">
+              System ansehen
             </Link>
           </div>
         </div>
@@ -255,12 +289,12 @@ export function LeqraExperience() {
 
       <section className="leqra-problem-section">
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">The real blocker</p>
-          <h2>Companies do not lack AI. They lack structure.</h2>
+          <p className="leqra-kicker">Der eigentliche Engpass</p>
+          <h2>Die meisten Unternehmen haben kein KI-Problem. Sie haben ein Strukturproblem.</h2>
           <p>
-            Most companies already have valuable knowledge. It lives in documents, inboxes, meetings, project tools,
-            CRM systems, spreadsheets and people heads. Without structure, AI cannot know what is official, outdated,
-            responsible, risky or ready to become work.
+            Fast jedes Unternehmen besitzt wertvolles Wissen. Es liegt nur verteilt in Dokumenten, Postfächern,
+            Meetings, CRM-Systemen, Tabellen und Toollandschaften. Ohne Struktur weiß KI nicht, was offiziell,
+            veraltet, verantwortlich, riskant oder handlungsreif ist.
           </p>
         </div>
         <div className="leqra-problem-grid">
@@ -277,10 +311,10 @@ export function LeqraExperience() {
       <section className="leqra-system-section" id="system" ref={systemRef}>
         <div className="leqra-section-copy">
           <p className="leqra-kicker">Leqra System</p>
-          <h2>The intelligence layer before AI can work.</h2>
+          <h2>Der Intelligenz-Layer, bevor KI zuverlässig arbeiten kann.</h2>
           <p>
-            Leqra turns scattered company reality into AI-ready structure: knowledge, processes, roles, decisions,
-            approvals, workflows and operational logic.
+            Leqra übersetzt Unternehmensrealität in KI-bereite Struktur: Wissen, Prozesse, Rollen, Entscheidungen,
+            Freigaben, Workflows und operative Logik.
           </p>
         </div>
         <motion.div className="leqra-layer-stack" style={{ y: layerY }}>
@@ -294,11 +328,30 @@ export function LeqraExperience() {
         </motion.div>
       </section>
 
+      <section className="leqra-detail-section">
+        <div className="leqra-section-copy">
+          <p className="leqra-kicker">Was strukturiert wird</p>
+          <h2>Leqra ordnet nicht nur Daten. Leqra ordnet Arbeit.</h2>
+          <p>
+            Der Unterschied zwischen einem Chatbot und echter KI-Operations liegt darin, ob das System die Logik des
+            Unternehmens versteht. Leqra baut diese Logik Schritt für Schritt auf.
+          </p>
+        </div>
+        <div className="leqra-detail-grid">
+          {detailGroups.map((group) => (
+            <article key={group.title}>
+              <h3>{group.title}</h3>
+              <p>{group.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="leqra-relationship-section" id="relationship">
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">System relationship</p>
-          <h2>From AI readiness to operational clarity.</h2>
-          <p>Leqra builds the foundation. Festag becomes the cockpit. Tagro explains what matters.</p>
+          <p className="leqra-kicker">Systembeziehung</p>
+          <h2>Von KI-Bereitschaft zu operativer Klarheit.</h2>
+          <p>Leqra baut das Fundament. Festag wird das Cockpit. Tagro erklärt, was wirklich zählt.</p>
         </div>
         <div className="leqra-flow">
           {relationship.map((item) => (
@@ -309,16 +362,16 @@ export function LeqraExperience() {
             </article>
           ))}
         </div>
-        <p className="leqra-system-line">Leqra structures the company. Festag manages the work. Tagro explains the progress.</p>
+        <p className="leqra-system-line">Leqra strukturiert das Unternehmen. Festag steuert die Arbeit. Tagro erklärt den Fortschritt.</p>
       </section>
 
       <section className="leqra-usecase-section" id="use-cases" ref={useCaseRef}>
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">Use cases</p>
-          <h2>Built for companies where work lives in communication.</h2>
+          <p className="leqra-kicker">Anwendungsfälle</p>
+          <h2>Gebaut für Unternehmen, in denen Arbeit in Kommunikation lebt.</h2>
           <p>
-            Leqra is useful wherever customer requests, decisions, approvals and operational knowledge are scattered
-            across messages, documents and tools.
+            Leqra ist besonders wertvoll dort, wo Kundenwünsche, Entscheidungen, Freigaben und Wissen über Nachrichten,
+            Dokumente und Tools verteilt sind.
           </p>
         </div>
         <div className="leqra-usecase-viewport">
@@ -329,15 +382,15 @@ export function LeqraExperience() {
                 <p>{item.problem}</p>
                 <dl>
                   <div>
-                    <dt>Leqra structures</dt>
+                    <dt>Leqra strukturiert</dt>
                     <dd>{item.leqra}</dd>
                   </div>
                   <div>
-                    <dt>Managed in Festag</dt>
+                    <dt>In Festag steuerbar</dt>
                     <dd>{item.festag}</dd>
                   </div>
                   <div>
-                    <dt>Explained by Tagro</dt>
+                    <dt>Von Tagro erklärt</dt>
                     <dd>{item.tagro}</dd>
                   </div>
                 </dl>
@@ -349,9 +402,9 @@ export function LeqraExperience() {
 
       <section className="leqra-feature-section">
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">Readiness engine</p>
-          <h2>Not a chatbot. A company readiness engine.</h2>
-          <p>Leqra does not simply answer questions. It prepares the operating structure intelligent systems need.</p>
+          <p className="leqra-kicker">Bereitschafts-Engine</p>
+          <h2>Kein Chatbot. Eine Bereitschaftsmaschine für das Unternehmen.</h2>
+          <p>Leqra beantwortet nicht nur Fragen. Leqra bereitet die operative Struktur vor, die intelligente Systeme brauchen.</p>
         </div>
         <div className="leqra-feature-grid">
           {features.map(([title, body], index) => (
@@ -364,46 +417,46 @@ export function LeqraExperience() {
         </div>
         <div className="leqra-product-console">
           <div>
-            <span>AI readiness score</span>
+            <span>KI-Bereitschafts-Score</span>
             <strong>78%</strong>
           </div>
           <div>
-            <span>Data sources mapped</span>
+            <span>Datenquellen erfasst</span>
             <strong>12</strong>
           </div>
           <div>
-            <span>Recurring workflows detected</span>
+            <span>Workflows erkannt</span>
             <strong>34</strong>
           </div>
           <div>
-            <span>Approval flows missing</span>
+            <span>Fehlende Freigaben</span>
             <strong>5</strong>
           </div>
           <div>
-            <span>Automation opportunities found</span>
+            <span>Automationspotenziale</span>
             <strong>3</strong>
           </div>
           <div>
-            <span>Recommended next step</span>
-            <strong>Operations Setup</strong>
+            <span>Empfohlener nächster Schritt</span>
+            <strong>Operations-Aufbau</strong>
           </div>
         </div>
       </section>
 
       <section className="leqra-before-after-section">
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">Before / After</p>
-          <h2>Before Leqra, work is scattered. After Leqra, work is structured.</h2>
+          <p className="leqra-kicker">Vorher / Nachher</p>
+          <h2>Vor Leqra ist Arbeit verstreut. Nach Leqra ist Arbeit strukturierte Intelligenz.</h2>
         </div>
         <div className="leqra-compare-grid">
           <article>
-            <h3>Scattered Work</h3>
+            <h3>Verstreute Arbeit</h3>
             {before.map((item) => (
               <span key={item}>{item}</span>
             ))}
           </article>
           <article>
-            <h3>Structured Intelligence</h3>
+            <h3>Strukturierte Intelligenz</h3>
             {after.map((item) => (
               <span key={item}>
                 <Check size={14} />
@@ -414,10 +467,29 @@ export function LeqraExperience() {
         </div>
       </section>
 
+      <section className="leqra-audit-section">
+        <div className="leqra-section-copy">
+          <p className="leqra-kicker">Audit-Ergebnis</p>
+          <h2>Nach dem Audit gibt es keinen Nebel mehr. Es gibt einen Plan.</h2>
+          <p>
+            Das Ziel ist nicht eine lange Präsentation. Das Ziel ist ein belastbarer Fahrplan, was strukturiert,
+            implementiert, automatisiert und bewusst nicht automatisiert wird.
+          </p>
+        </div>
+        <div className="leqra-audit-grid">
+          {auditDeliverables.map(([title, body]) => (
+            <article key={title}>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="leqra-process-section" id="process">
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">Process</p>
-          <h2>How Leqra transforms a company.</h2>
+          <p className="leqra-kicker">Prozess</p>
+          <h2>Wie Leqra ein Unternehmen transformiert.</h2>
         </div>
         <div className="leqra-process-line">
           {process.map(([title, body], index) => (
@@ -432,8 +504,8 @@ export function LeqraExperience() {
 
       <section className="leqra-pricing-section" id="pricing">
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">Pricing</p>
-          <h2>Start with structure. Scale into intelligence.</h2>
+          <p className="leqra-kicker">Preise</p>
+          <h2>Mit Struktur starten. In Intelligenz skalieren.</h2>
         </div>
         <div className="leqra-pricing-grid">
           {pricing.map((item) => (
@@ -449,28 +521,28 @@ export function LeqraExperience() {
                   </li>
                 ))}
               </ul>
-              <Link className="nw-button nw-button-secondary" href="#contact">
+              <Link className="nw-button nw-button-secondary" href="/kontakt">
                 {item.cta}
               </Link>
             </article>
           ))}
         </div>
-        <p className="leqra-enterprise-line">Enterprise, multi-team and white-label implementations available on request.</p>
+        <p className="leqra-enterprise-line">Enterprise-, Multi-Team- und White-Label-Implementierungen auf Anfrage.</p>
       </section>
 
       <section className="leqra-trust-section">
         <div className="leqra-section-copy">
-          <p className="leqra-kicker">Data control</p>
-          <h2>Your company data stays under your control.</h2>
+          <p className="leqra-kicker">Datenkontrolle</p>
+          <h2>Unternehmensdaten bleiben unter Kontrolle.</h2>
           <p>
-            Leqra starts with a controlled, low-risk data scope. You do not give Leqra all your data. You approve
-            specific knowledge areas for a controlled transformation process.
+            Leqra startet mit einem kontrollierten, risikoarmen Datenumfang. Nicht alles wird angebunden. Es werden
+            konkrete Wissensbereiche freigegeben, geprüft und strukturiert.
           </p>
         </div>
         <div className="leqra-trust-grid">
           <article>
             <Lock size={18} />
-            <h3>Controlled access</h3>
+            <h3>Kontrollierter Zugriff</h3>
             <ul>
               {trustItems.map((item) => (
                 <li key={item}>
@@ -481,30 +553,30 @@ export function LeqraExperience() {
             </ul>
           </article>
           <article className="leqra-permission-panel">
-            <span>Public company knowledge</span>
-            <span>Approved internal processes</span>
-            <span>Optional sensitive systems</span>
-            <span>Excluded data</span>
-            <span>Human approval required</span>
+            <span>Öffentliches Unternehmenswissen</span>
+            <span>Freigegebene interne Prozesse</span>
+            <span>Optionale sensible Systeme</span>
+            <span>Ausgeschlossene Daten</span>
+            <span>Menschliche Freigabe erforderlich</span>
           </article>
         </div>
       </section>
 
-      <section className="leqra-final-section" id="contact">
+      <section className="leqra-final-section" id="kontakt">
         <LeqraMark />
-        <p className="leqra-kicker">Start the foundation</p>
-        <h2>Your company is already full of intelligence. Leqra makes it usable.</h2>
+        <p className="leqra-kicker">Fundament starten</p>
+        <h2>Das Unternehmen ist bereits voller Intelligenz. Leqra macht sie nutzbar.</h2>
         <p>
-          Start with an AI Readiness Audit and discover how your knowledge, workflows and projects can become
-          structured, manageable and AI-powered.
+          Starte mit einem KI-Bereitschafts-Audit und finde heraus, wie Wissen, Workflows und Projekte strukturiert,
+          steuerbar und KI-fähig werden.
         </p>
         <div className="leqra-actions">
-          <a className="nw-button nw-button-primary" href="mailto:hello@leqra.ai?subject=AI%20Readiness%20Audit">
-            Book AI Readiness Call
+          <a className="nw-button nw-button-primary" href="mailto:hello@leqra.ai?subject=KI-Bereitschafts-Audit">
+            Audit anfragen
             <ArrowRight size={16} />
           </a>
-          <Link className="nw-button nw-button-secondary" href="#system">
-            Explore Leqra System
+          <Link className="nw-button nw-button-secondary" href="/system">
+            Leqra System ansehen
           </Link>
         </div>
       </section>

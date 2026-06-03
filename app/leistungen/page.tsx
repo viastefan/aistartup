@@ -4,24 +4,40 @@ export default function LeistungenPage() {
   return (
     <SubpageTemplate
       eyebrow="Leistungen"
-      title="AI-Systeme, die in echte Ablaufe passen."
-      intro="Neuralwerk implementiert AI nicht als Demo, sondern als nutzbaren Bestandteil von Vertrieb, Operations, Service und Management."
-      image="/media/workshop.jpg"
+      title="Von verstreutem Unternehmenswissen zu KI-fähigen Operations."
+      intro="Leqra baut nicht einfach einen Chatbot. Leqra schafft die Struktur, die ein Unternehmen braucht, damit KI-Assistenten, Automationen, Festag und Tagro belastbar funktionieren."
+      metric="8 Module"
+      metricLabel="Leqra Leistungssystem"
       blocks={[
         {
-          title: 'AI-Prozessanalyse',
-          body: 'Wir finden die Prozesse, bei denen AI wirklich Zeit spart oder bessere Entscheidungen vorbereitet.',
-          points: ['Prozessaufnahme', 'Tool- und Datenlandkarte', 'Priorisierte Use Cases']
+          title: 'KI-Bereitschafts-Audit',
+          body: 'Wir prüfen, welche Daten, Prozesse, Rollen und Entscheidungen bereits nutzbar sind und wo Struktur fehlt.',
+          points: ['Bereitschafts-Score', 'Daten- und Tool-Landkarte', 'Anwendungsfall-Priorisierung', '90-Tage-Fahrplan']
         },
         {
-          title: 'Assistenten & Chatbots',
-          body: 'Interne und externe AI-Assistenten fur Wissen, Dokumente, Leads, Support und operative Fragen.',
-          points: ['Website-Chat', 'Wissensassistent', 'Lead-Qualifizierung']
+          title: 'Wissensstrukturierung',
+          body: 'Unternehmenswissen wird in kontrollierte, aktuelle und nutzbare Wissensbereiche überführt.',
+          points: ['Dokumente und SOPs', 'Meeting- und Kundenwissen', 'Versionierung', 'offizieller Kontext']
         },
         {
-          title: 'Workflow-Automatisierung',
-          body: 'Wir verbinden bestehende Systeme und reduzieren manuelle Arbeit zwischen Tools.',
-          points: ['CRM', 'E-Mail und Kalender', 'Dokumente und Tabellen']
+          title: 'Operations-Aufbau',
+          body: 'Prozesse werden so modelliert, dass daraus Aufgaben, Freigaben, Entscheidungen und Risiken entstehen können.',
+          points: ['Rollen und Ownership', 'Workflow-Design', 'Freigabelogik', 'Eskalationspfade']
+        },
+        {
+          title: 'Automation Blueprint',
+          body: 'Wir definieren, was automatisiert werden darf, was menschliche Prüfung braucht und was bewusst manuell bleibt.',
+          points: ['Automationspotenziale', 'Risikoanalyse', 'Human-in-the-loop', 'Umsetzungsreihenfolge']
+        }
+      ]}
+      secondary={[
+        {
+          title: 'Warum zuerst Struktur?',
+          body: 'Ohne klare Daten- und Prozesslogik wird KI schnell ein zusätzliches Tool. Mit Struktur wird KI Teil der operativen Steuerung.'
+        },
+        {
+          title: 'Was entsteht am Ende?',
+          body: 'Ein belastbares Fundament für interne Assistenten, Projektcockpits, Kundenbriefings, Managementreports und sichere Automationen.'
         }
       ]}
     />

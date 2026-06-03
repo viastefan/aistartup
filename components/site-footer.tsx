@@ -2,13 +2,14 @@ import Link from 'next/link'
 import { LeqraMark } from '@/components/leqra-mark'
 
 const links = [
-  { label: 'System', href: '/#system' },
-  { label: 'Use Cases', href: '/#use-cases' },
-  { label: 'Process', href: '/#process' },
-  { label: 'Pricing', href: '/#pricing' },
-  { label: 'Contact', href: '/#contact' },
-  { label: 'Festag', href: '/#relationship' },
-  { label: 'Tagro', href: '/#relationship' }
+  { label: 'System', href: '/system' },
+  { label: 'Leistungen', href: '/leistungen' },
+  { label: 'Anwendungsfälle', href: '/use-cases' },
+  { label: 'Prozess', href: '/prozess' },
+  { label: 'Preise', href: '/preise' },
+  { label: 'Sicherheit', href: '/sicherheit' },
+  { label: 'Festag & Tagro', href: '/festag-tagro' },
+  { label: 'Kontakt', href: '/kontakt' }
 ]
 
 export function SiteFooter() {
@@ -21,7 +22,7 @@ export function SiteFooter() {
           </span>
           <span>Leqra</span>
         </Link>
-        <p>Leqra makes companies AI-ready. Festag makes work manageable. Tagro makes progress understandable.</p>
+        <p>Leqra macht Unternehmen KI-bereit. Festag macht Arbeit steuerbar. Tagro macht Fortschritt verständlich.</p>
       </div>
       <nav aria-label="Footer Navigation">
         {links.map((link) => (

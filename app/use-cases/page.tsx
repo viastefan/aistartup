@@ -3,25 +3,41 @@ import { SubpageTemplate } from '@/components/subpage-template'
 export default function UseCasesPage() {
   return (
     <SubpageTemplate
-      eyebrow="Use Cases"
-      title="AI-Anwendungen fur normale, operative Unternehmensprozesse."
-      intro="Die besten AI-Projekte beginnen selten abstrakt. Sie starten dort, wo jeden Tag Zeit verloren geht."
-      image="/media/office.jpg"
+      eyebrow="Anwendungsfälle"
+      title="Für Unternehmen, in denen Arbeit über Kommunikation verteilt ist."
+      intro="Leqra eignet sich besonders dort, wo Kunden, Teams, Dokumente, Entscheidungen und Freigaben täglich in vielen Kanälen entstehen und niemand mehr das ganze Bild sieht."
+      metric="5 Felder"
+      metricLabel="Fokusbranchen"
       blocks={[
         {
-          title: 'Immobilien & Vertrieb',
-          body: 'Anfragen, Exposes, Termine und Follow-ups werden strukturiert und schneller bearbeitet.',
-          points: ['Expose-Vorbereitung', 'Anfragefilterung', 'CRM-Zusammenfassungen']
+          title: 'Agenturen und Dienstleister',
+          body: 'Kundenfeedback, Freigaben, Scope-Änderungen und Projektstatus werden in ein steuerbares Arbeitsmodell gebracht.',
+          points: ['Kundenbriefings', 'Freigabe-Workflows', 'Statusberichte', 'Scope-Änderungen']
         },
         {
-          title: 'Service & Kommunikation',
-          body: 'AI hilft, eingehende Nachrichten zu verstehen, zu priorisieren und Antwortvorschlage zu erstellen.',
-          points: ['Support-Triage', 'E-Mail-Flows', 'Website-Chat']
+          title: 'Immobilienunternehmen',
+          body: 'Objektdaten, Eigentümerkommunikation, Leads und Unterlagen werden strukturiert und reportingfähig.',
+          points: ['Objektlogik', 'Lead-Flows', 'Eigentümerupdates', 'Dokumentenstatus']
         },
         {
-          title: 'Management & Reporting',
-          body: 'Status, Zahlen und Risiken werden aus bestehenden Tools zu verwertbaren Briefings.',
-          points: ['Wochenberichte', 'Projektstatus', 'Entscheidungsgrundlagen']
+          title: 'Hotels und Hospitality',
+          body: 'Servicewissen, SOPs, Gästefragen und operative Aufgaben werden in klare Prozesse und Briefings übersetzt.',
+          points: ['SOP-Struktur', 'Serviceanfragen', 'Managementbriefings', 'Eskalationen']
+        },
+        {
+          title: 'Beratung und B2B-Teams',
+          body: 'Meetings, Entscheidungen, Deliverables und Verantwortlichkeiten werden nachvollziehbar und steuerbar.',
+          points: ['Entscheidungslogs', 'Deliverable-Tracking', 'Executive Summaries', 'Risikoübersicht']
+        }
+      ]}
+      secondary={[
+        {
+          title: 'Gemeinsames Muster',
+          body: 'In allen Fällen ist das Problem nicht fehlende KI. Das Problem ist, dass operative Realität nicht sauber genug strukturiert ist.'
+        },
+        {
+          title: 'Ergebnis',
+          body: 'Leqra macht aus Kommunikation verwertbare Arbeit: Aufgaben, Entscheidungen, Freigaben, Risiken, Reports und nächster Schritt.'
         }
       ]}
     />

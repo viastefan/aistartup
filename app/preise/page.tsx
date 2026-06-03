@@ -4,24 +4,40 @@ export default function PreisePage() {
   return (
     <SubpageTemplate
       eyebrow="Preise"
-      title="Klarer Einstieg, sauberer Scope, skalierbare Betreuung."
-      intro="Wir starten klein genug, um schnell Nutzen zu sehen, und strukturiert genug, um daraus ein dauerhaftes AI-System zu bauen."
-      image="/media/session.jpg"
+      title="Mit Struktur starten. Dann in echte KI-Operations skalieren."
+      intro="Leqra ist so aufgebaut, dass Unternehmen kontrolliert beginnen können: erst Audit und Klarheit, dann Operations-Aufbau, danach laufender Ausbau."
+      metric="3 Stufen"
+      metricLabel="Startmodell"
       blocks={[
         {
-          title: 'AI-Potenzialcheck',
-          body: 'ab 490 EUR fur eine klare Einschatzung und priorisierte Empfehlungen.',
-          points: ['Erstgesprach', 'Prozessaufnahme', 'Aufwandsschatzung']
+          title: 'KI-Bereitschafts-Audit',
+          body: 'ab 1.500 EUR. Für Unternehmen, die verstehen wollen, wo KI realistisch ansetzen kann.',
+          points: ['Bereitschafts-Score', 'Anwendungsfall-Karte', 'Daten- und Tool-Landkarte', '90-Tage-Fahrplan']
         },
         {
-          title: 'Implementation Sprint',
-          body: 'ab 2.900 EUR fur eine erste konkrete AI-Losung im Unternehmen.',
-          points: ['Konzept', 'Umsetzung', 'Einfuhrung']
+          title: 'Leqra Operations-Aufbau',
+          body: 'ab 7.500 EUR. Für Unternehmen, die Wissen, Prozesse und Workflows KI-bereit strukturieren wollen.',
+          points: ['Knowledge Core', 'Prozessmodellierung', 'Festag-ready Setup', 'Automation Blueprint']
         },
         {
-          title: 'AI Partner',
-          body: 'individuell fur laufende Roadmap, neue Automationen und technische Betreuung.',
-          points: ['Monitoring', 'Schulung', 'Weiterentwicklung']
+          title: 'Kontinuierliche KI-Operations',
+          body: 'ab 1.500 EUR pro Monat. Für laufende Optimierung, neue Anwendungsfälle und aktuelle Unternehmenslogik.',
+          points: ['Wissenspflege', 'Workflow-Optimierung', 'Tagro-Briefings', 'laufende Beratung']
+        },
+        {
+          title: 'Enterprise Setup',
+          body: 'Individuell. Für Multi-Team-, White-Label- oder besonders datenintensive Implementierungen.',
+          points: ['Mehrere Teams', 'erweiterte Rechte', 'Custom Integrationen', 'Sicherheitsprüfung']
+        }
+      ]}
+      secondary={[
+        {
+          title: 'Warum keine Pauschale für alles?',
+          body: 'Jedes Unternehmen hat andere Datenqualität, Toollandschaft und Prozessreife. Deshalb startet Leqra mit einem klaren Scope statt mit einer ungenauen Paketbehauptung.'
+        },
+        {
+          title: 'Wofür zahlst du wirklich?',
+          body: 'Nicht für eine Demo. Sondern für eine Struktur, die im Alltag hält: Wissen, Prozesse, Verantwortlichkeiten, Freigaben, Automationslogik und Umsetzungsplan.'
         }
       ]}
     />

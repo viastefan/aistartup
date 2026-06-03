@@ -4,12 +4,12 @@ import { LeqraMark } from '@/components/leqra-mark'
 import { Button } from '@/components/ui/button'
 
 const links = [
-  { href: '/#system', label: 'System' },
-  { href: '/#use-cases', label: 'Use Cases' },
-  { href: '/#process', label: 'Process' },
-  { href: '/#pricing', label: 'Pricing' },
-  { href: '/#relationship', label: 'Festag' },
-  { href: '/#contact', label: 'Contact' }
+  { href: '/system', label: 'System' },
+  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/use-cases', label: 'Anwendungsfälle' },
+  { href: '/prozess', label: 'Prozess' },
+  { href: '/preise', label: 'Preise' },
+  { href: '/sicherheit', label: 'Sicherheit' }
 ]
 
 export function SiteHeader() {
@@ -31,8 +31,8 @@ export function SiteHeader() {
       </nav>
 
       <Button asChild>
-        <Link href="/#contact">
-          Start AI Readiness Audit
+        <Link href="/kontakt">
+          Audit starten
           <ArrowRight size={15} />
         </Link>
       </Button>

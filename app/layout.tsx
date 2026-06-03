@@ -2,14 +2,14 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Leqra - Make Your Company AI-Ready',
+  title: 'Leqra - Unternehmen KI-bereit machen',
   description:
-    'Leqra structures company knowledge, workflows and operations so businesses can use AI systems, automations and intelligent workspaces like Festag and Tagro.',
+    'Leqra strukturiert Wissen, Workflows und Operations, damit Unternehmen KI-Systeme, Automationen, Festag und Tagro zuverlässig nutzen können.',
   applicationName: 'Leqra',
   openGraph: {
-    title: 'Leqra - Make Your Company AI-Ready',
+    title: 'Leqra - Unternehmen KI-bereit machen',
     description:
-      'Leqra structures company knowledge, workflows and operations so businesses can use AI systems, automations and intelligent workspaces like Festag and Tagro.',
+      'Leqra strukturiert Wissen, Workflows und Operations, damit Unternehmen KI-Systeme, Automationen, Festag und Tagro zuverlässig nutzen können.',
     locale: 'de_DE',
     type: 'website'
   },
